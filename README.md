@@ -11,7 +11,10 @@
 - crud on income(s) data
 
 
+## Data Info
+- `/data/accounts.json` = hold all the info of the accounts (credit cards, banking, etc...)
+- `/data/expenses.json` = hold all the expenses info
+- `/data/incomes.json`  = hold all the incomes info
+
 ## Data Relationship
-- year trackers house all the monthly expenses (Only 12 month)
-- each month expense house all the espence(s) & income(s)
-- each expense(s) & income(s) should map to an account 
+**WIP**
