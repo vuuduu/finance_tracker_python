@@ -1,0 +1,11 @@
+[
+    {
+        "expense_id": 1,
+        "date": "2024-12-1",
+        "vendor": "Royal Farms",
+        "amount": "29.71",
+        "category": "Gas",
+        "card_used": "Discover",
+        "note": "This is used at a gas station"
+    }
+]

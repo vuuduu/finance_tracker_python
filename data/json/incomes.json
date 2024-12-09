@@ -1,0 +1,11 @@
+[
+    {
+        "income_id": 1,
+        "date": "2024-12-1",
+        "source": "Travelers",
+        "amount": "1086",
+        "category": "Salary",
+        "account_to": "Bank of America",
+        "note": "This is a salary"
+    }
+]

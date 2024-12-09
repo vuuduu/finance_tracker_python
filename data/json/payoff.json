@@ -1,0 +1,11 @@
+[
+    {
+        "payoff_id": 1,
+        "date": "2024-12-1",
+        "account_from": "Bank of America",
+        "account_to": "Discover",
+        "amount": "29.71",
+        "category": "Discover Payoff",
+        "note": "This is used at a gas station"
+    }
+]

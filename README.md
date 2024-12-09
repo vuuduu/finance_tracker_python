@@ -12,9 +12,10 @@
 
 
 ## Data Info
-- `/data/accounts.json` = hold all the info of the accounts (credit cards, banking, etc...)
 - `/data/expenses.json` = hold all the expenses info
 - `/data/incomes.json`  = hold all the incomes info
+- `/data/payoff.json`   = hold all the payoff info
+- `/data/trackers.json` = hold all the _date_ and _year_ info
 
 ## Data Relationship
-**WIP**
+- Everytime a new expenses is created, checks it's data and add a new month & year to trackers if not already
