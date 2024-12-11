@@ -1,0 +1,9 @@
+12/11/2024 - 
+
+Step 1
+- Choosing_Years()
+    - retrieve year in data/ in a year view
+    - display selection for year
+    - choices to pick those selection
+    - retrieve or create the year based on choices
+    - return the selected year and open a new view
