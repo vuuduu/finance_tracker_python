@@ -1,9 +1,17 @@
 12/11/2024 - 
 
-Step 1
-- Choosing_Years()
+- DisplayYear()
     - retrieve year in data/ in a year view
     - display selection for year
     - choices to pick those selection
     - retrieve or create the year based on choices
     - return the selected year and open a new view
+
+
+- Format the return values and how it's being used
+    - 3 class (Years, Expense, Income)
+    - 2 method w/in  year data class:
+    -- create_new_year(new_year)
+    -- build_exist_year(select_year)
+
+

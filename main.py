@@ -1,4 +1,4 @@
-from src.display_years import DisplayYear
+from src.years_data import YearsData
 
 # def display_available_year(data_path: str) -> int:
 #     years = sorted(os.listdir(data_path), reverse=True)
@@ -36,7 +36,7 @@ if __name__ == '__main__':
     #         break
     #     print("Please enter a valid choice\n")
 
-    display_year = DisplayYear('data/json')
+    display_year = YearsData('data/json')
     display_year.run()
 
 

@@ -3,11 +3,15 @@ import os
 CHOICE = "choice"
 QUIT = "quit"
 
-class DisplayYear:
+class YearsData:
+    '''
+    - The class would display the available years within the <root>/data/json
+    - Get input from user based on the choices of the available years
+    - 
+    '''
 
     def __init__(self, base_path: str):
         self.years = self.__get_years(base_path)
-
 
     # Very if it's either create or retrieve
     # - Create: 
@@ -37,7 +41,8 @@ class DisplayYear:
             # Get input
             inputs = self.__get_input(len(self.years))
             if inputs[QUIT]:
-                print(inputs)
+                print("Inputs objects:", inputs)
+                print("Self.years:", self.years)
                 break
             print("\n Must enter a valid choice(s)!")
             print(inputs)
@@ -59,6 +64,11 @@ class DisplayYear:
 
         return {"choice": choice, "quit": quit}
 
+    def __verify_choice(self, choice: int, possible_choices: int) -> bool:
+        if 1 <= choice <= possible_choices + 1:
+            return True
+        return False
+
     def __get_years(self, base_path: str) -> list:
         years = []
         for data in os.listdir(base_path):
@@ -71,8 +81,3 @@ class DisplayYear:
             print(f"{i+1}. {years[i]}")
         
         print(f"{len(years)+1}. Create a new year trackers")
-
-    def __verify_choice(self, choice: int, possible_choices: int) -> bool:
-        if 1 <= choice <= possible_choices + 1:
-            return True
-        return False
