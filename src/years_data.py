@@ -38,6 +38,7 @@ class YearsData:
             if inputs[QUIT]:
                 print("Inputs objects:", inputs)
                 print("Self.years:", self.years)
+                self.__process_year_input(input=inputs)
                 break
             print("\n Must enter a valid choice(s)!")
             print(inputs)
@@ -76,3 +77,29 @@ class YearsData:
             print(f"{i+1}. {years[i]}")
         
         print(f"{len(years)+1}. Create a new year trackers")
+
+    def __process_year_input(self, input: dict):
+        choice = input[CHOICE]
+
+        # check if it's quit
+        if choice in ['q', 'quit', 'Q']:
+            return self.__return_year_action(action=choice)
+        # check if it's create new year
+        elif int(input[CHOICE]) == (len(self.years) + 1):
+            return self.__create_new_year()
+        
+        return self.__retrieve_year_data
+
+    def __create_new_year(self):
+        print("Create new year")
+        print("Ask for user year input")
+
+    def __retrieve_year_data(self, year: str):
+        print("Retrieve year:", year)
+
+    def __return_year_action(self, action: str, year: str=None, data: dict=None):
+        return {
+            "action": action,
+            "year": year,
+            "data": data
+        }
