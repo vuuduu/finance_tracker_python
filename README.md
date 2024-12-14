@@ -15,7 +15,6 @@
 - `/data/expenses.json` = hold all the expenses info
 - `/data/incomes.json`  = hold all the incomes info
 - `/data/payoff.json`   = hold all the payoff info
-- `/data/trackers.json` = hold all the _date_ and _year_ info
+- `/data/years.json` = hold all the data for expenses, incomes, and payoff
 
 ## Data Relationship
-- Everytime a new expenses is created, checks it's data and add a new month & year to trackers if not already
