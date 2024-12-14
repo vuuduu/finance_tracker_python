@@ -10,7 +10,10 @@
 
 - Format the return values and how it's being used
     - 3 class (Years, Expense, Income)
-    - 2 method w/in  year data class:
+
+    -> Next 
+    - Create a year class
+    - Create 2 method w/in  year data class from the choices in YearData class
     -- create_new_year(new_year)
     -- build_exist_year(select_year)
 

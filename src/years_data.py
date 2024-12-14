@@ -4,11 +4,6 @@ CHOICE = "choice"
 QUIT = "quit"
 
 class YearsData:
-    '''
-    - The class would display the available years within the <root>/data/json
-    - Get input from user based on the choices of the available years
-    - 
-    '''
 
     def __init__(self, base_path: str):
         self.years = self.__get_years(base_path)
