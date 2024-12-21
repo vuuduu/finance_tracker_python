@@ -36,15 +36,28 @@ class YearsData:
             # Get input
             inputs = self.__get_input(len(self.years))
             if inputs[QUIT]:
-                print("Inputs objects:", inputs)
-                print("Self.years:", self.years)
-                self.__process_year_input(input=inputs)
-                break
-            print("\n Must enter a valid choice(s)!")
+                print("\nInputs objects:", inputs)
+                print(f"Self.years: {self.years}\n")
+                return self.__process_year_input(input=inputs)
+            print("\n Must enter a valid choice(s)!\n")
             print(inputs)
 
+### HELPER FUNCTION - Processing years display info ###
 
-    def __get_input(self, possible_choices: int):
+    def __display_years(self, years: list) -> None:
+        for i in range(len(years)):
+            print(f"{i+1}. {years[i]}")
+        
+        print(f"{len(years)+1}. Create a new year trackers")
+
+    def __get_years(self, base_path: str) -> list:
+        years = []
+        for data in os.listdir(base_path):
+            if os.path.isdir(os.path.join(base_path, data)):
+                years.append(data)
+        return years
+
+    def __get_input(self, possible_choices: int) -> dict:
         choice = 0
         quit = False
         try:
@@ -56,7 +69,7 @@ class YearsData:
             else:
                 quit = self.__verify_choice(int(choice), possible_choices)
         except ValueError:
-            print("\n Choices CANNOT be a non-numeric value")
+            print("\n Choices CANNOT be a non-numeric value", end=' ')
 
         return {"choice": choice, "quit": quit}
 
@@ -65,18 +78,8 @@ class YearsData:
             return True
         return False
 
-    def __get_years(self, base_path: str) -> list:
-        years = []
-        for data in os.listdir(base_path):
-            if os.path.isdir(os.path.join(base_path, data)):
-                years.append(data)
-        return years
-    
-    def __display_years(self, years: list):
-        for i in range(len(years)):
-            print(f"{i+1}. {years[i]}")
-        
-        print(f"{len(years)+1}. Create a new year trackers")
+
+### HELPER FUNCTION - Process input after user pick the correct available option(s) ###
 
     def __process_year_input(self, input: dict):
         choice = input[CHOICE]
@@ -88,14 +91,19 @@ class YearsData:
         elif int(input[CHOICE]) == (len(self.years) + 1):
             return self.__create_new_year()
         
-        return self.__retrieve_year_data
+        return self.__retrieve_year_data(self.years[int(input[CHOICE]) - 1])
 
     def __create_new_year(self):
-        print("Create new year")
-        print("Ask for user year input")
+        # Ask for year input
+        # Verify the year already exist
+        # If yes => ask again or quit
+        # If no => create a directory of that year 
+        ##### along with 3 empty json data (expense, income, payoff).
+        return {"create_new_year": "test"}
 
     def __retrieve_year_data(self, year: str):
-        print("Retrieve year:", year)
+        print(f"\nRetrieve year: {year}")
+        return {"retrieve_year": "test"}
 
     def __return_year_action(self, action: str, year: str=None, data: dict=None):
         return {

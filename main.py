@@ -11,6 +11,8 @@ if __name__ == '__main__':
     print('#####################################\n')
 
     display_year = YearsData('data/json')
-    display_year.run()
+    result = display_year.run()
+
+    print(f"\nResult in main.py {result}\n")
 
 
